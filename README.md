@@ -1,5 +1,5 @@
 # CTF
-CTFs used as a practice environment to reinforce web security concepts and attack methodology.
+<!-- CTFs used as a practice environment to reinforce web security concepts and attack methodology. -->
 
 This repository documents my approach to solving selected CTF challenges, focusing on web exploitation, logic analysis, and controlled bypass techniques
 
@@ -31,6 +31,3 @@ This repository documents my approach to solving selected CTF challenges, focusi
 
 ### Outcome
 - Successfully bypassed the authentication mechanism and gained unauthorized access to the restricted portal, confirming the presence of a critical access control flaw.
-
-
-## Challenge 2: SSTI 1
