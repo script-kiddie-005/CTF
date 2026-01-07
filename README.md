@@ -39,15 +39,15 @@ This repository documents my approach to solving selected CTF challenges, focusi
 - To exploit a Server-Side Template Injection (SSTI) vulnerability in a web application challenge from picoCTF, identify the underlying templating engine, and retrieve the challenge flag by executing code on the server.
 
 #### Approach
-- Started by observing how the web app rendered user input after submission, and initially tested for XSS, but further testing failed to yield meaningful results.
+- Started by observing how the web app rendered user input after submission.
 - Recognized from the challenge title (SSTI1) that it likely involved server-side template injection.
-- Tested template expressions such as {{3*3}}, which executed and returned results, confirming SSTI.
+- Tested template expressions such as {{7*'7'}}, which executed and returned results, confirming SSTI.
 - Enumerated internal objects to identify that the server used Jinja2 as the template engine.
 - Leveraged access to Python globals and built-ins exposed through Jinja2 to import the os module and run shell commands to explore the file system.
 
 #### Key Finding
 - The target was vulnerable to Server-Side Template Injection because user input was directly interpreted by a server template engine without proper sanitization.
-- Successful template expressions like {{3*3}} confirmed that input was executed as code.
+- Successful template expressions like {{7*'7'}} confirmed that input was executed as code.
 - By examining internal objects, it was determined that Jinja2 was the engine used, opening paths to further exploitation.
 - Using Python’s os module through Jinja2 globals allowed execution of commands like ls and cat flag, ultimately retrieving the challenge flag.
 
