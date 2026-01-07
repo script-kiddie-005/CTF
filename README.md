@@ -46,8 +46,8 @@ This repository documents my approach to solving selected CTF challenges, focusi
 - Leveraged access to Python globals and built-ins exposed through Jinja2 to import the os module and run shell commands to explore the file system.
 
 #### Key Finding
--The target was vulnerable to Server-Side Template Injection because user input was directly interpreted by a server template engine without proper sanitization.
--Successful template expressions like {{3*3}} confirmed that input was executed as code.
+- The target was vulnerable to Server-Side Template Injection because user input was directly interpreted by a server template engine without proper sanitization.
+- Successful template expressions like {{3*3}} confirmed that input was executed as code.
 - By examining internal objects, it was determined that Jinja2 was the engine used, opening paths to further exploitation.
 - Using Python’s os module through Jinja2 globals allowed execution of commands like ls and cat flag, ultimately retrieving the challenge flag.
 
