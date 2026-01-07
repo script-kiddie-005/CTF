@@ -1,7 +1,0 @@
-The target was a web portal with a login form where the email address was pre-filled and the password needed to be identified.
-I began by submitting a random password, which returned an “Invalid Credentials” error.
-Initial inspection of the page revealed nothing useful, so I reviewed the page source code instead.
-Within the comments, I found an obfuscated string left by the developers.
-After decoding it using ROT13, it revealed that a temporary bypass could be achieved by including a custom HTTP header: X-Dev-Access: yes.
-I then intercepted the login request using Burp Suite, added the required header, and forwarded the request to Repeater.
-Upon sending the modified request, the response contained the flag: picoCTF{brut4_f0rc4_125f752d}.
