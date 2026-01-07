@@ -1,13 +1,7 @@
 The target was a web application with a home page containing an announcement feature that reflected user input on a separate page.
-
 Based on the lab name and the reflective behavior, I suspected the application was vulnerable to Server-Side Template Injection (SSTI).
-
 To identify the template engine in use, I tested common SSTI payloads.
-
 The input {{7*'7'}} returned a string multiplication result, indicating that the application was using the Jinja2 template engine.
-
 After confirming the engine, I exploited the SSTI by leveraging Python object traversal to achieve command execution.
-
 Using a crafted payload, I executed system commands via os.popen() to enumerate the application directory and locate the flag file.
-
 Finally, I executed a command to read the contents of the flag file, successfully retrieving the flag and confirming full server-side code execution through the template injection vulnerability.
